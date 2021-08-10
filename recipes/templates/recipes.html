@@ -9,7 +9,7 @@
 <body>
     <h2>Список всех рецептов</h2>
     {% for recipe in recipes %}
-        <div>{{ recipe.name }} - {{ recipe.location }}</div>
+        <div>{{ recipe.name }} - {{ recipe.short_description }}</div>
     {% endfor %}
 </body>
 </html>
