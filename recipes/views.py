@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from .models import Recipe
 
-# Create your views here.
+def recipes(request):
+    recipe_objects = Recipe.objects.all()
+    return render(request, 'recipes.html',  {'recipes': recipe_objects})   
+
+
