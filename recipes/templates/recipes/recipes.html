@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block page %}
+    <h2>Рецепты</h2>
+    {% for recipe in recipes %}
+        <div><a href="{% url 'recipe' recipe.id %}">{{ recipe.name }} - {{ recipe.short_description }}</a></div>
+    {% endfor %}
+{% endblock %}

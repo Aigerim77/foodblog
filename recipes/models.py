@@ -18,9 +18,9 @@ class Recipe(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "рецепт"
-        verbose_name_plural = "Рецепты"
-        ordering = ["name"]
+        verbose_name = 'рецепт'
+        verbose_name_plural = 'Рецепты'
+        ordering = ['name']
 
 
 
