@@ -7,6 +7,13 @@ class Profile(models.Model):
         related_name='profile'
     )
 
+    level = models.CharField(max_length=15, choices=(
+        ('Шеф-повар', 'Шеф-повар'),
+        ('Повар', 'Повар'),
+        ('Любитель', 'Любитель'),
+        ('Домохозяйка', 'Домохозяйка'),
+    ))
+
     photo = models.ImageField(
         upload_to='profile_photo',
         null=True, blank=True
