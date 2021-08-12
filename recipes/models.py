@@ -38,13 +38,17 @@ class Feedback(models.Model):
         verbose_name='Рецепт'
     )
 
-    text = models.TextField(verbose_name='Текст обратной связи')
+    text = models.TextField(
+        verbose_name='Текст обратной связи'
+    )
+
+    checked = models.BooleanField(default=False, verbose_name='Обработано')
 
     def __str__(self):
-        return text[:20]
+        return self.text[:20]
 
     class Meta:
         verbose_name = 'Обратная связь'
         verbose_name_plural = 'Обратные связи'
-        
+
 
