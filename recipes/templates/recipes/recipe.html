@@ -3,6 +3,9 @@
 {% block page %}
     <h2>{{ recipe_object.name }}</h2>
     <h3>{{ recipe_object.short_description }}</h3>
+    {% if recipe_object.img %}
+        <img src="{{ recipe_object.img.url }}" width="50%"> 
+    {% endif %}
     <div>{{ recipe_object.description }}</div>
     <hr>
     <div>Просмотров: {{ recipe_object.views_count }}</div>
