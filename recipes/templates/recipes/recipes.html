@@ -1,8 +1,124 @@
 {% extends 'base.html' %}
 
 {% block page %}
-    <h2>Рецепты</h2>
+    
     {% for recipe in recipes %}
-        <div><a href="{% url 'recipe' recipe.id %}">{{ recipe.name }} - {{ recipe.short_description }}</a></div>
+        <div><a class='nav-link' href="{% url 'recipe' recipe.id %}">{{ recipe.name }} - {{ recipe.short_description }}</a></div>
     {% endfor %}
+    <main class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <br>
+            <h3 class="pb-4 mb-4 font-italic border-bottom">
+              Пошаговые рецепты с фотографиями
+            </h3>
+            
+      
+            <div class="blog-post">
+              <h2 class="blog-post-title">Вяленые помидоры</h2>
+              <p class="blog-post-meta">1 июня 2014 <a href="#">Марк</a></p>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQTUcqb9xfeCxJB0rlk0WxsJgEC28nn8G-nA&usqp=CAU" alt="Bootstrap" width="100" height="100" class="rounded-circle border border-white">
+                    
+              
+            </div><!-- /.blog-post -->
+      
+            <div class="blog-post">
+              <h2 class="blog-post-title">Другой пост в блоге</h2>
+              <p class="blog-post-meta">23 декабря 2013 <a href="#">Николай</a></p>
+      
+              <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+              <blockquote>
+                <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              </blockquote>
+              <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+              <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+            </div><!-- /.blog-post -->
+      
+            <div class="blog-post">
+              <h2 class="blog-post-title">Новая функция</h2>
+              <p class="blog-post-meta">14 декабря 2013 <a href="#">Крис</a></p>
+      
+              <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+              <ul>
+                <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+                <li>Donec id elit non mi porta gravida at eget metus.</li>
+                <li>Nulla vitae elit libero, a pharetra augue.</li>
+              </ul>
+              <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+              <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+            </div><!-- /.blog-post -->
+      
+          </div>
+      
+          <aside class="col-md-4">
+            <div class="p-4 mb-3 bg-light rounded">
+              <h4 class="font-italic">О блоге</h4>
+              <p class="mb-0">Здесь вы найдете пошаговые рецепты с фотографиями на каждый день и на праздничный стол</p>
+            </div>
+      
+            <div class="p-4">
+                <h4 class="font-italic">КАТЕГОРИИ</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><h5><a href="">Вторые блюда</a></h5></li>
+                    <li><a href="">>Блюда из субпродуктов</a>
+                    <li><a href="">>Запенки</a></li>
+                    <li><a href="">>Каши</a></li>
+                    <li><a href="">>Мясо</a></li>
+                    <li><a href="">>Овощи и грибы</a></li>
+                    <li><a href="">>Паста, блюда из макарон</a></li>
+                    <li><a href="">>Пельмени, вареники, манты</a></li>
+                    <li><a href="">>Птица</a></li>
+                    <li><a href="">>Рыба и морепродукты</a></li>
+                    <li><a href="">>Суши и роллы</a></li>
+                    <li><h5><a href="">Выпечка, блюда из теста</a></h5></li>
+                    <li><a href="">>Блины</a></li>
+                    <li><a href="">>Булочки, пышки, хлеб</a></li>      
+                    <li><a href="">>Кексы и маффины</a></li>
+                    <li><a href="">>Пироги</a></li>
+                    <li><a href="">>Пирожки</a></li>
+                    <li><a href="">>Пицца</a></li>
+                    <li><a href="">>Тесто</a></li>
+                    <li><a href="">>Чебуреки, беляши, сочни</a></li>
+                    <li><a href="">>Шарлотки</a></li>
+                    <li><h5><a href="">Десерты</a></h5></li>
+                    <li><a href="">>Конфеты</a></li>
+                    <li><a href="">>Печенье</a></li>
+                    <li><a href="">>Торты</a></li>
+                    <li><a href="">>Фруктовые десерты</a>
+                    <li><h5><a href="">Закуски</a></h5>
+                    <li><a href="">>Бутерброды</a></li>
+                    <li><a href="">>Закуски из мяса</a></li>
+                    <li><a href="">>Закуски из овощей и грибов</a></li>
+                    <li><a href="">>Закуски из рыбы и морепродуктов</a></li>
+                    <li><a href="">>Закуски из сыра</a></li>
+                    <li><a href="">>Закуски из яиц</a></li>
+                    <li><a href="">>Заливное</a></li>
+                    <li><a href="">>Паштеты</a></li>
+                    <li><a href="">>Рулеты</a></li>
+                    <li><h5><a href="">Консервирование</a></h5></li>
+                    <li><a href="">>Варенье</a></li>
+                    <li><a href="">>Консервированное мясо</a></li>
+                    <li><a href="">>Маринады</a></li>
+                    <li><a href="">>Овощные салаты</a></li>
+                    <li><a href="">>Соленья</a></li>
+                    <li><h5><a href="">Салаты</a></h5></li>
+                    <li><a href="">>Салаты из овощей, грибов, сыра</a></li>
+                    <li><a href="">>Салаты из рыбы и морепродуктов</a></li>
+                    <li><a href="">>Салаты с мясом</a></li>
+                    <li><h5><a href="">Соусы</a></h5></li>
+                    <li><a href="">>Майонезы</a></li>
+                    <li><a href="">>Соусы из муки</a></li>
+                    <li><h5><a href="">Супы</a></h5></li>
+                    <li><a href="">>Бульоны</a></li>
+                    <li><a href="">>Заправочные супы</a></li>
+                    <li><a href="">>Рыбные супы</a></li>
+                    <li><a href="">>Суп-пюре</a></li>
+                    <li><a href="">>Холодные супы</a></li>
+                </ol>
+            </div>
+        </aside>
+      
+        </div><!-- /.row -->
+      
+      </main><!-- /.container -->
 {% endblock %}

@@ -33,7 +33,9 @@ def edit_recipe(request, id):
     recipe_form = RecipeForm(instance=recipe_object)
     return render(request, 'recipes/form.html', {'recipe_form': recipe_form})
 
+
 def delete_recipe(request, id):
     recipe_object = Recipe.objects.get(id=id)
     recipe_object.delete()
     return redirect(recipes)
+
