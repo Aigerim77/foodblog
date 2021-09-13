@@ -53,3 +53,14 @@ class Feedback(models.Model):
         verbose_name_plural = 'Обратные связи'
 
 
+class Comment(models.Model):
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+    author_name = models.CharField('автор', max_length=50)
+    comment_text = models.CharField('текст комментария', max_length=200)
+
+    def __str__(self):
+        return self.author_name
+
+    class Meta:
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'

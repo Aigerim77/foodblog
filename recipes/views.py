@@ -3,7 +3,7 @@ from .models import Recipe
 from .forms import RecipeForm
 
 def recipes(request):
-    recipe_objects = Recipe.objects.all()
+    recipe_objects = Recipe.objects.all()[:10]
     return render(request, 'recipes/recipes.html',  {'recipes': recipe_objects})   
 
 def create_recipe(request):
@@ -39,3 +39,8 @@ def delete_recipe(request, id):
     recipe_object.delete()
     return redirect(recipes)
 
+
+
+
+def comment(request, recipe_id):
+    pass

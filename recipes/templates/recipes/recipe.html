@@ -13,5 +13,9 @@
     <a class="btn btn-lg btn-warning" href="{% url 'edit-recipe' recipe_object.id %}">Изменить</a>
     <a class="btn btn-lg btn-danger" href="{% url 'delete-recipe' recipe_object.id %}">Удалить</a>
 
+    <form action="{% url 'recipes:comment' recipe.id %}" method="POST">
+        <input type="text" required placeholder="Ваше имя" name="name">
+        <textarea name="text" required placeholder="Текст комментария" cols='30' rows='10'></textarea><br>
+    </form>
 
 {% endblock %}

@@ -1,8 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect 
+from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from django.urls import reverse_lazy
-from django.views import generic
+from django.contrib.auth import authenticate, login
+from .forms import LoginForm
+from .models import Profile
+
 
 
 def homepage(request):
@@ -13,23 +16,41 @@ def profile(request):
     profile_object = user.profile
     return render(request, 'core/profile.html', {'profile': profile_object})
 
-def login(request):
-    user = request.user
-    login_object = user.profile
-    return render(request, 'core/login.html', {'login': login_object})
-
-
-
-def news(request):
-   return render(request, 'core/news.html')
-
-def advice(request):
-   return render(request, 'core/advice.html')
 
 def registr(request):
     form = UserCreationForm(request.POST or None) 
-    msg = "йцукен"
+    User.profile = property(lambda u: Profile.objects.get_or_create(user=u)[0])
     if form.is_valid():
-        form.save() 
+        form.save()
+        
         return redirect('profile')                        
-    return render(request, 'core/register.html', {'form': form})
+    return render(request, 'registration/register.html', {'form': form})
+
+
+def user_login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            user = authenticate(username=cd['username'], password=cd['password'])
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return redirect('profile')
+                else:
+                    return HttpResponse('Disabled account')
+            else:
+                return HttpResponse('Invalid login')
+    else:
+        form = LoginForm()
+    return render(request, 'registration/login.html', {'form': form})
+
+
+def news(request):
+   return render(request, 'news.html')
+
+def advice(request):
+   return render(request, 'advice.html')
+
+
+

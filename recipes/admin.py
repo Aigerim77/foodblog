@@ -1,7 +1,8 @@
 from django.contrib import admin
-from .models import Recipe, Feedback
+from .models import Recipe, Feedback, Comment
 
 admin.site.register(Recipe)
+admin.site.register(Comment)
 
 class FeedbackAdmin(admin.ModelAdmin):
     list_display = ['text', 'recipe', 'user', 'checked']

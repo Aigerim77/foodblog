@@ -5,5 +5,8 @@
     <h2>Логин - {{ profile.user.username }}</h2>
     <h2>ФИО - {{ profile.user.get_full_name }}</h2>
     <h2>Уровень - {{ profile.level }}</h2>
-    <img src="{{ profile.photo.url }}">
+    <a class="btn btn-lg btn-warning" href="">Изменить</a>
+    <a class="btn btn-lg btn-danger" href="">Удалить</a><img src="{{ profile.photo.url }}">
+   
+    
 {% endblock %}
