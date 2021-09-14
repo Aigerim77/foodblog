@@ -1,14 +1,14 @@
 from django.contrib import admin
-from .models import Recipe, Feedback, Comment
+from .models import Recipe, Feedback
 
 admin.site.register(Recipe)
-admin.site.register(Comment)
+
 
 class FeedbackAdmin(admin.ModelAdmin):
     list_display = ['text', 'recipe', 'user', 'checked']
     list_editable = ['checked']
     list_filter = ['checked']
-    search_fields = ['text', 'recipe__name', 'recipe__description']
+    search_fields = ['text']
 
     fields = ['user', 'recipe', 'text']
     readonly_fields = ['recipe', 'text']

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Recipe
+from .models import Recipe, Feedback
 
 
 class RecipeForm(forms.ModelForm):
@@ -7,5 +7,9 @@ class RecipeForm(forms.ModelForm):
         model = Recipe
         fields = ['name', 'short_description', 'description']
 
+class FeedbackForm(forms.ModelForm):
+    class Meta:
+        model = Feedback
+        fields = ['recipe', 'text'] 
 
 

@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
-from .models import Recipe
-from .forms import RecipeForm
+from django.views.generic import FormView, DetailView
+from .models import Recipe, Feedback
+from .forms import RecipeForm, FeedbackForm
+
 
 def recipes(request):
     recipe_objects = Recipe.objects.all()[:10]
@@ -41,6 +43,17 @@ def delete_recipe(request, id):
 
 
 
+class FeedbackView(FormView):
+    template_name = 'recipes/Feedback_form.html'
+    form_class = FeedbackForm
+    success_url = '/recipes/'
 
-def comment(request, recipe_id):
-    pass
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+
+class FeedbackDetailView(DetailView):
+    queryset = Feedback.objects.all()
+    template_name = 'recipes/feedback.html'
+
+

@@ -47,10 +47,11 @@ def user_login(request):
 
 
 def news(request):
-   return render(request, 'news.html')
+   return render(request, 'core/news.html')
 
 def advice(request):
-   return render(request, 'advice.html')
+   return render(request, 'core/advice.html')
+
 
 
 
