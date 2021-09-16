@@ -1,192 +1,72 @@
 {% extends 'base.html' %}
 
 {% block page %}
-
-    <main>
-        
-        <div align="center">
-            <img>
-            <h2>Все самое лучшее о еде</h2>
-        </div>
-      
-        <div class="container px-4 py-5" id="featured-3">
-          <h2 class="pb-2 border-bottom">Десерты</h2>
-          <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-            <div class="feature col">
-              <div class="feature-icon bg-primary bg-gradient">
-                <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
-              </div>
-              <h2>Сладкая выпечка</h2>
-              <p>words.</p>
-              <a href="#" class="icon-link">
-                Подробнее
-                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
-              </a>
+    <div>
+        <style>
+            .stroke {
+            font: bold 3em Arial, sans-serif;
+            color: #030f1b;
+            text-shadow: #cbd6e2 1px 1px 0, #cad5e2 2px 2px 0, 
+                        #cad5e2 3px 3px 0, #cad5e2 4px 4px 0, 
+                        #cad5e2 5px 5px 0;
+            }
+        </style>
+        <br>
+        <h2 align='center' class="stroke">Нет любви более искренней, <br>чем любовь к еде!</h2>
+        <h3 align='right' style="color:#0d3967">Бернард Шоу</h3><br><hr>
+    </div>
+    <style type="text/css">
+        .photo {
+         background: #a5c1cf; /* Цвет фона */
+         width: 300px; /* Ширина */
+         margin: 0 10px 10px 0; /* Отступы */
+         padding: 10px 0; /* Поля сверху и снизу */
+         text-align: center; /* Выравнивание по центру */
+         display: inline-block; /* Строчно-блочный элемент */
+        }
+        .photo img {
+         border: 2px solid #112f4b; /* Параметры рамки */
+        }
+        .photo p {
+         margin: 0; /* Отступы */
+        }
+       </style>
+       <div align='center'>
+            <div class="photo">
+                <p><img src="./media/index/kari.png" alt="" /></p>
+                <p class="caption">Кари</p>
             </div>
-            <div class="feature col">
-              <div class="feature-icon bg-primary bg-gradient">
-                <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"></use></svg>
-              </div>
-              <h2>Холодные десерты</h2>
-              <p>words.</p>
-              <a href="#" class="icon-link">
-                Подробнее
-                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
-              </a>
+            <div class="photo">
+                <p><img src="./media/index/fish.jpg" alt="" /></p>
+                <p class="caption">Рулет из филе сельди</p>
             </div>
-            <div class="feature col">
-              <div class="feature-icon bg-primary bg-gradient">
-                <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
-              </div>
-              <h2>Фруктовые десерты</h2>
-              <p>words.</p>
-              <a href="#" class="icon-link">
-                Подробнее
-                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
-              </a>
+            <div class="photo">
+                <p><img src="./media/index/tako.jpg" alt="" /></p>
+                <p class="caption">Тако с мясом</p>
             </div>
-          </div>
-        </div>
-        <div class="b-example-divider"></div>
-      
-        <div class="container px-4 py-5" id="hanging-icons">
-          <h2 class="pb-2 border-bottom">Горячие блюда</h2>
-          <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-            <div class="col d-flex align-items-start">
-              <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
-              </div>
-              <div>
-                <h2>Супы</h2>
-                <p>words.</p>
-                <a href="#" class="btn btn-primary">
-                  Узнать больше
-                </a>
-              </div>
+            <div class="photo">
+                <p><img src="./media/index/rise.jpg" alt="" /></p>
+                <p class="caption">Рис с овощами</p>
             </div>
-            <div class="col d-flex align-items-start">
-              <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
-              </div>
-              <div>
-                <h2>На второе</h2>
-                <p>коммент</p>
-                <a href="#" class="btn btn-primary">
-                    Узнать больше
-                </a>
-              </div>
+            <div class="photo">
+                <p><img src="./media/index/fish1.jpg" alt="" /></p>
+                <p class="caption">Запеченная рыба</p>
             </div>
-            <div class="col d-flex align-items-start">
-              <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
-              </div>
-              <div>
-                <h2>Выпечка</h2>
-                <p>коммент</p>
-                <a href="#" class="btn btn-primary">
-                  Узнать больше
-                </a>
-              </div>
+            <div class="photo">
+                <p><img src="./media/index/salad.jpg" alt="" /></p>
+                <p class="caption">Салат с рукколой</p>
             </div>
-          </div>
-        </div>
-        <div class="container px-4 py-5" id="hanging-icons">
-            <h2 class="pb-2 border-bottom">Салаты</h2>
-            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-              <div class="col d-flex align-items-start">
-                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
-                </div>
-                <div>
-                  <h2>Овощные салаты</h2>
-                  <p>words.</p>
-                  <a href="#" class="btn btn-primary">
-                    Узнать больше
-                  </a>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
-                </div>
-                <div>
-                  <h2>Салаты с мясом</h2>
-                  <p>коммент</p>
-                  <a href="#" class="btn btn-primary">
-                      Узнать больше
-                  </a>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
-                </div>
-                <div>
-                  <h2>Праздничные салаты</h2>
-                  <p>коммент</p>
-                  <a href="#" class="btn btn-primary">
-                    Узнать больше
-                  </a>
-                </div>
-              </div>
+            <div class="photo">
+                <p><img src="./media/index/1.jpg" alt="" /></p>
+                <p class="caption">Говядина с овощами</p>
             </div>
-          </div>
-        
-        <div class="container px-4 py-5" id="custom-cards">
-            <h2 class="pb-2 border-bottom">Кухни мира</h2>
-            <div class="b-example-divider"></div>
-            <div class="album py-5 bg-light">
-                <div class="container">
-            
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            
-                        <div class="card-body">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            </div>
-                        </div>    
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            
-                        <div class="card-body">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            </div>
-                        </div>    
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-        
-                    <div class="card-body">
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div class="photo">
+                <p><img src="./media/index/2.jpg" alt="" /></p>
+                <p class="caption">Жаркое в горшочке</p>
             </div>
-        </div>
-          
-        
-      </main>
-      <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
-
+            <div class="photo">
+                <p><img src="./media/index/3.jpg" alt="" /></p>
+                <p class="caption">Десерт</p>
+            </div>
+       </div>
 {% endblock %}

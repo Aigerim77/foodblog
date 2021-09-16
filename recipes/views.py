@@ -5,7 +5,7 @@ from .forms import RecipeForm, FeedbackForm
 
 
 def recipes(request):
-    recipe_objects = Recipe.objects.all()[:10]
+    recipe_objects = Recipe.objects.all()[:30]
     return render(request, 'recipes/recipes.html',  {'recipes': recipe_objects})   
 
 def create_recipe(request):
@@ -44,7 +44,7 @@ def delete_recipe(request, id):
 
 
 class FeedbackView(FormView):
-    template_name = 'recipes/Feedback_form.html'
+    template_name = 'recipes/feedback_form.html'
     form_class = FeedbackForm
     success_url = '/recipes/'
 

@@ -1,11 +1,24 @@
 {% extends 'base.html' %}
 
 {% block page %}
-    
-    <h2>Sign up</h2>
-    <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
-    </form>
+    <br>
+    <br>
+    <main class="container">
+        <div class="row">
+        <div class="col-md-8">
+            <h1 align='center'>
+                РЕГИСТРАЦИЯ
+            </h1><br><br>
+        </div>
+        </div><!-- /.row -->
+    </main><!-- /.container -->
+    <div class='alert alert-secondary mt-2'>
+        <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Зарегистрироваться</button>
+        </form>
+        <br><br>
+        <a href=''>Уже зарегистрированы?</a>
+    </div>
 {% endblock %}

@@ -7,7 +7,7 @@ class Recipe(models.Model):
         null=True, blank=True
     )
     name = models.CharField(max_length=255)
-    short_description = models.CharField(max_length=255) #короткое описание
+    short_description = models.CharField(max_length=255) 
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -22,6 +22,15 @@ class Recipe(models.Model):
         verbose_name = 'рецепт'
         verbose_name_plural = 'Рецепты'
         ordering = ['name']
+
+    level = models.CharField(max_length=15, choices=(
+        ('Вторые блюда', 'Вторые блюда'),
+        ('Выпечка', 'Выпечка'),
+        ('Десерт', 'Десерт'),
+        ('Закуски', 'Закуски'),
+        ('Супы', 'Супы'),
+        ('Салаты', 'Салаты'),
+    ))
 
 class Feedback(models.Model):
     user = models.ForeignKey(

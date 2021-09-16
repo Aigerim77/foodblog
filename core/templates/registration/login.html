@@ -1,37 +1,33 @@
 {% extends "base.html" %}
 
 {% block page %}
-        
+  <br>
+  <br>
+  <main class="container">
+      <div class="row">
+      <div class="col-md-8">
+          <h1 align='center'>
+              ВХОД
+          </h1><br><br>
+      </div>
+      </div><!-- /.row -->
+  </main><!-- /.container -->
+  <div class='alert alert-secondary mt-2'>
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <table>
+      <tr>
+        <td>{{ form.username.label_tag }}</td>
+        <td>{{ form.username }}</td>
+      </tr>
 
-{% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+      <tr>
+        <td>{{ form.password.label_tag }}</td>
+        <td>{{ form.password }}</td>
+      </tr>
+    </table>
 
-{% if next %}
-  {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-  {% else %}
-    <p>Please login to see this page.</p>
-  {% endif %}
-{% endif %}
-
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
-<table>
-
-<tr>
-  <td>{{ form.username.label_tag }}</td>
-  <td>{{ form.username }}</td>
-</tr>
-
-<tr>
-  <td>{{ form.password.label_tag }}</td>
-  <td>{{ form.password }}</td>
-</tr>
-</table>
-
-<input type="submit" value="login" />
-<input type="hidden" name="next" value="{{ next }}" />
-</form>
+    <input type="submit" value="ВОЙТИ" />
+    <input type="hidden" name="next" value="{{ next }}" />
+  </form>
 {% endblock %}

@@ -6,26 +6,18 @@
         <div class="col-md-8">    
             <br>
             <br>
-            <h2 align='center'>{{ recipe_object.name }}</h2>
+            <h2 align='center'>{{ post_object.title }}</h2>
             <br>
-            <h3 align='center'>{{ recipe_object.short_description }}</h3>
-            <h2 align='center'><img src="{{ recipe_object.img.url }}" width="50%"></h2> 
+            <h3 align='center'>{{ post_object.short_description }}</h3>
+             
             <br><hr><br>
-            <div>{{ recipe_object.description }}</div>
+            <div>{{ post_object.description }}</div>
             <hr>
-            <div>Просмотров: {{ recipe_object.views_count }}</div>
+            <div>Просмотров: {{ post_object.views_count }}</div>
             <br>
-            <a class="btn btn-lg btn-warning" href="{% url 'edit-recipe' recipe_object.id %}">Изменить</a>
-            <a class="btn btn-lg btn-danger" href="{% url 'delete-recipe' recipe_object.id %}">Удалить</a>
-            <br>
-            <br>
-            <button class="btn btn-info" href="/recipes/recipe_object.id/feedback.html">Оставить комментарий</button>
-            <br>
-            <br>
-            <h4>Комментарии</h4>
-            <hr>
             
-            <div>{{ feedback.text }}</div>
+            
+        </div>
         </div>
         <aside class="col-md-4"><main class="container">
             <div class="p-4 mb-3 bg-light rounded">

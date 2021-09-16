@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm
-from .models import Profile
+from .models import Profile, News, Advice
 
 
 
@@ -37,20 +37,26 @@ def user_login(request):
                 if user.is_active:
                     login(request, user)
                     return redirect('profile')
-                else:
-                    return HttpResponse('Disabled account')
-            else:
-                return HttpResponse('Invalid login')
+                #else:
+                 #   return HttpResponse('Disabled account')
+            #else:
+             #   return HttpResponse('Invalid login')
     else:
         form = LoginForm()
     return render(request, 'registration/login.html', {'form': form})
 
 
 def news(request):
-   return render(request, 'core/news.html')
+    news_objects = News.objects.all()
+    return render(request, 'core/news.html', {'news_objects': news_objects})
+
+def post(request, id):
+    post_object = News.objects.get(id=id)
+    return render(request, 'core/post.html', {'post_object': post_object})
 
 def advice(request):
-   return render(request, 'core/advice.html')
+    advice_object = Advice.objects.all()
+    return render(request, 'core/advice.html', {'advice_object': advice_object})
 
 
 
