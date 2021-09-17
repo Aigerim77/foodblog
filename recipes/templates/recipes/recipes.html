@@ -8,6 +8,8 @@
             Пошаговые рецепты с фотографиями
           </h3>
           {% for recipe in recipes %}
+
+
             <a class='nav-link' style="color:rgb(19, 41, 41)" href="{% url 'recipe' recipe.id %}">
               <div class='alert alert-info mt-2'>
               <h3>{{ recipe.name }}</h3>
