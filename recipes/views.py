@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
-from django.views.generic import FormView, DetailView
+from django.views.generic import FormView, DetailView, ListView
 from .models import Recipe, Feedback
 from .forms import RecipeForm, FeedbackForm
-
+from django.db.models import Q
 
 def recipes(request):
     recipe_objects = Recipe.objects.all()[:30]
@@ -56,4 +56,16 @@ class FeedbackDetailView(DetailView):
     queryset = Feedback.objects.all()
     template_name = 'recipes/feedback.html'
 
+
+
+class Search(ListView):
+    model = Recipe.objects.all
+    template_name = 'recipes/search.html'
+    
+    def get_queryset(self): 
+        query = self.request.GET.get('q')
+        object_list = Recipe.objects.filter(
+            Q(name__icontains=query) | Q(short_description__icontains=query)
+            )
+        return object_list
 

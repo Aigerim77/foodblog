@@ -7,7 +7,6 @@ from .forms import LoginForm
 from .models import Profile, News, Advice
 
 
-
 def homepage(request):
     return render(request, 'core/index.html')
 
@@ -60,7 +59,4 @@ def post(request, id):
 def advice(request):
     advice_object = Advice.objects.all()
     return render(request, 'core/advice.html', {'advice_object': advice_object})
-
-
-
 

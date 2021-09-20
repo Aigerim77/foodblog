@@ -9,6 +9,6 @@ urlpatterns = [
     path('<int:id>/', post, name='post'),
     path('advice/', advice, name='advice'),
     path('login/', user_login, name='login'),
-    path("logout",logout,name="logout")
+    path("logout",logout,name="logout"),
 
 ]
