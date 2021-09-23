@@ -11,9 +11,9 @@
         </div><!-- /.row -->
     </main><!-- /.container -->
             
-    {% for el in news_object %}
+    {% for el in news_objects %}
         <div class='alert alert-warning mt-2'>
-            <a class='nav-link' style="color:teal" href="{% url 'post' post.id %}">{{ el.title }}</a>
+            <a class='nav-link' style="color:teal" href="">{{ el.title }}</a>
             <p>{{el.short_description }}</p>     
             
         </div>

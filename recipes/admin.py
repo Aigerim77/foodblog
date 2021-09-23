@@ -3,7 +3,6 @@ from .models import Recipe, Feedback
 
 admin.site.register(Recipe)
 
-
 class FeedbackAdmin(admin.ModelAdmin):
     list_display = ['text', 'recipe', 'user', 'checked']
     list_editable = ['checked']

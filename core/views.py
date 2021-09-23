@@ -9,12 +9,13 @@ from .models import Profile, News, Advice
 
 
 def homepage(request):
-    return render(request, 'core/index.html')
+    return render(request, './recipes/recipes.html')
 
 def profile(request):
     user = request.user
     profile_object = user.profile
     return render(request, 'core/profile.html', {'profile': profile_object})
+
 
 
 def registr(request):
@@ -50,9 +51,9 @@ def news(request):
     news_objects = News.objects.all()
     return render(request, 'core/news.html', {'news_objects': news_objects})
 
-def post(request, id):
-    post_object = News.objects.get(id=id)
-    return render(request, 'core/post.html', {'post_object': post_object})
+#def post(request, id):
+ #   post_object = News.objects.get(id=id)
+  #  return render(request, 'core/post.html', {'post_object': post_object})
 
 def advice(request):
     advice_object = Advice.objects.all()
