@@ -8,6 +8,7 @@
             Пошаговые рецепты с фотографиями
           </h3>
           {% for recipe in recipes %}
+<<<<<<< HEAD
             <div>
               <a class='nav-link' style="color:rgb(19, 41, 41)" href="{% url 'recipe' recipe.id %}">
                 <div class='alert alert-info mt-2'>
@@ -16,6 +17,18 @@
                 </div>
               </a>
             </div>
+=======
+
+
+            <a class='nav-link' style="color:rgb(19, 41, 41)" href="{% url 'recipe' recipe.id %}">
+              <div class='alert alert-info mt-2'>
+              <h3>{{ recipe.name }}</h3>
+              <p>{{ recipe.short_description }} 
+              
+          
+              </div>
+            </a>
+>>>>>>> a331d44cffef76e868c2d3d483d757dbbc916ede
           {% endfor %}
           
         </div>

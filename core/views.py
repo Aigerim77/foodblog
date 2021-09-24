@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect 
 from django.http import HttpResponse
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, auth
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm
 from .models import Profile, News, Advice
-
 
 
 def homepage(request):
@@ -46,6 +45,9 @@ def user_login(request):
         form = LoginForm()
     return render(request, 'registration/login.html', {'form': form})
 
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
 
 def news(request):
     news_objects = News.objects.all()
@@ -58,7 +60,4 @@ def news(request):
 def advice(request):
     advice_object = Advice.objects.all()
     return render(request, 'core/advice.html', {'advice_object': advice_object})
-
-
-
 

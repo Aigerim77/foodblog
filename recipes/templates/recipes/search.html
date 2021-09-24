@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block page %}
+
+<br>
+<br>
+<main class="container">
+    <div class="row">
+    <div class="col-md-8">
+        <h1 align='center'>
+            Результаты поиска
+        </h1><br><br>
+    </div>
+    </div><!-- /.row -->
+</main><!-- /.container -->
+
+ 
+    <ul>
+        {% for recipe in object_list %}
+
+            <a class='nav-link' style="color:rgb(19, 41, 41)" href="{% url 'recipe' recipe.id %}">
+                <div class='alert alert-info mt-2'>
+                <h3>{{ recipe.name }}</h3>
+                <p>{{ recipe.short_description }}            
+                </div>
+            </a>
+
+        {% endfor %}
+    </ul>
+
+{% endblock %}

@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
-from django.views.generic import FormView, DetailView
+from django.views.generic import FormView, DetailView, ListView
 from .models import Recipe, Feedback
+from core.models import Advice, News
 from .forms import RecipeForm, FeedbackForm
-
+from django.db.models import Q
+from itertools import chain
 
 
 def recipes(request):
@@ -58,4 +60,23 @@ class FeedbackDetailView(DetailView):
     queryset = Feedback.objects.all()
     template_name = 'recipes/feedback.html'
 
+
+
+class Search(ListView):
+    model = Recipe.objects.all
+    template_name = 'recipes/search.html'
+    
+    def get_queryset(self): 
+        query = self.request.GET.get('q')
+        recipe = Recipe.objects.filter(
+            Q(name__icontains=query) | Q(short_description__icontains=query)
+            )
+        advice = Advice.objects.filter(
+            Q(title__icontains=query) | Q(short_description__icontains=query)
+            )
+        news = News.objects.filter(
+            Q(title__icontains=query) | Q(short_description__icontains=query)
+            )
+        results = chain(recipe, advice, news)
+        return results
 

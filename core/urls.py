@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import homepage, profile, user_login, registr, news, advice
+from .views import homepage, profile, user_login, registr, news, advice, logout
+
 
 urlpatterns = [
     path('', homepage, name='homepage'),
@@ -9,6 +10,6 @@ urlpatterns = [
     #path('<int:id>/', post, name='post'),
     path('advice/', advice, name='advice'),
     path('login/', user_login, name='login'),
-  
-        
+    path("logout",logout,name="logout"),
+
 ]
