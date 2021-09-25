@@ -47,7 +47,7 @@ def user_login(request):
 
 def logout(request):
     auth.logout(request)
-    return redirect('/')
+    return redirect('/recipes/')
 
 def news(request):
     news_objects = News.objects.all()

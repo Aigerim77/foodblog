@@ -1,5 +1,5 @@
-from django.shortcuts import render, redirect
-from django.views.generic import FormView, DetailView, ListView
+from django.shortcuts import render, redirect, HttpResponse
+from django.views.generic import ListView, FormView, DetailView 
 from .models import Recipe, Feedback
 from core.models import Advice, News
 from .forms import RecipeForm, FeedbackForm
@@ -23,8 +23,11 @@ def create_recipe(request):
     return render(request, 'recipes/form.html', {'recipe_form': recipe_form})
 
 def recipe(request, id):
-    recipe_object = Recipe.objects.get(id=id)
-    return render(request, 'recipes/recipe.html', {'recipe_object': recipe_object})
+    try:
+        recipe_object = Recipe.objects.get(id=id)
+        return render(request, 'recipes/recipe.html', {'recipe_object': recipe_object})
+    except Recipe.DoesNotExist as e:
+        return HttpResponse(f'Not found: {e}', status=404)
 
 
 def edit_recipe(request, id):
@@ -44,8 +47,6 @@ def delete_recipe(request, id):
     recipe_object = Recipe.objects.get(id=id)
     recipe_object.delete()
     return redirect(recipes)
-
-
 
 class FeedbackView(FormView):
     template_name = 'recipes/feedback_form.html'

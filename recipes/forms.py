@@ -6,10 +6,9 @@ class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
         fields = ['name', 'short_description', 'description', 'img']
+        
 
 class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Feedback
-        fields = ['recipe', 'text'] 
-
-
+        fields = ['recipe', 'text']

@@ -23,3 +23,8 @@ class SeleniumTest(TestCase):
 
         sleep(5)
         drive.close()     
+
+
+
+class ProfileTestCase(TestCase):
+    def test_open_profile

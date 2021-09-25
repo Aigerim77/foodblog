@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 
 {% block page %}
+    <br>
     <h1 align='center'>Профиль пользователя:</h1>
-    <h2>Логин: {{ profile.user.username }}</h2>
-    <h2>ФИО: {{ profile.user.get_full_name }}</h2>
-    <img src="{{ recipe_object.img.url }}" width="50%">
-    <a class="btn btn-lg btn-warning" href="">Изменить</a>
-    <a class="btn btn-lg btn-danger" href="">Удалить</a><img src="{{ profile.photo.url }}">
-   
+    <hr>
+    <div class='alert alert-secondary mt-2'>
+        <h2>Логин: {{ profile.user.username }}</h2>
+        <h2>ФИО: {{ profile.user.get_full_name }}</h2>
+        <img src="{{ recipe_object.img.url }}" width="50%">
+        <br>
+        <hr>
+        <a class="btn btn-lg btn-warning" href="">Изменить</a>
+        <a class="btn btn-lg btn-danger" href="">Удалить</a><img src="{{ profile.photo.url }}">
+    </div>
     
 {% endblock %}

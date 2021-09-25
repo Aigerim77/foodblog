@@ -24,8 +24,6 @@ class Recipe(models.Model):
         verbose_name_plural = 'Рецепты'
         ordering = ['name']
 
-    
-
 class Feedback(models.Model):
     user = models.ForeignKey(
         to=User,
@@ -33,7 +31,6 @@ class Feedback(models.Model):
         null=True,
         blank=True,
         verbose_name='Пользователь'
-    
     )
 
     recipe = models.ForeignKey(
@@ -43,16 +40,13 @@ class Feedback(models.Model):
     )
 
     text = models.TextField(
-        verbose_name='Текст обратной связи'
+        verbose_name='Комментарий'
     )
-
-    checked = models.BooleanField(default=False, verbose_name='Обработано')
 
     def __str__(self):
         return self.text[:20]
 
     class Meta:
-        verbose_name = 'Обратная связь'
-        verbose_name_plural = 'Обратные связи'
-
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
 

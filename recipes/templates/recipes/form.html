@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 
 {% block page %}
-
-    <form method="POST">
-        {% csrf_token %}
-        {{ recipe_form.as_p }}
-        
-        <button>Сохранить</button>
-
-    </form>
-
+    <br>
+    <br>
+        <h1 align='center'>Добавить новый рецепт</h1>
+    <hr>
+    <div class='alert alert-secondary mt-2'>
+        <form method="POST">
+            {% csrf_token %}
+            {{ recipe_form.as_p }}
+                
+            <button>Сохранить</button>
+        </form>
+    </div>
+    
 {% endblock %}
