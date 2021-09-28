@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm
 from .models import Profile, News, Advice
+from django.contrib.auth.decorators import login_required
 
 
 def homepage(request):
@@ -23,7 +24,7 @@ def registr(request):
     if form.is_valid():
         form.save()
         
-        return redirect('profile')                        
+        return redirect('/recipes')                        
     return render(request, 'registration/register.html', {'form': form})
 
 
@@ -61,3 +62,11 @@ def advice(request):
     advice_object = Advice.objects.all()
     return render(request, 'core/advice.html', {'advice_object': advice_object})
 
+def user_delete(request, id):
+    user = User.objects.get(id=id)
+    if request.user == user:
+        logout(request)
+        user.delete()
+        return redirect('/recipes/')
+    else:
+        return HttpResponse('У вас нет разрешения на удаление операций')
