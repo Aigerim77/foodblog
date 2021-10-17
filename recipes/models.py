@@ -1,12 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
+
+
 class Recipe(models.Model):
     user = models.ForeignKey(
         to=User, on_delete=models.SET_NULL, 
         null=True, blank=True
     )
-   
+  
     name = models.CharField(max_length=255)
     short_description = models.CharField(max_length=255) 
     description = models.TextField()
@@ -16,6 +19,7 @@ class Recipe(models.Model):
     is_publicated = models.BooleanField(default=True)
     img = models.ImageField(upload_to='recipes', null=True, blank=True)
     
+    
     def __str__(self):
         return self.name
 
@@ -24,29 +28,31 @@ class Recipe(models.Model):
         verbose_name_plural = 'Рецепты'
         ordering = ['name']
 
-class Feedback(models.Model):
-    user = models.ForeignKey(
-        to=User,
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        verbose_name='Пользователь'
-    )
 
-    recipe = models.ForeignKey(
-        to=Recipe,
-        on_delete=models.CASCADE,
-        verbose_name='Рецепт'
-    )
 
-    text = models.TextField(
-        verbose_name='Комментарий'
-    )
+#class Feedback(models.Model):
+ #   user = models.ForeignKey(
+  #      to=User,
+   #     on_delete=models.SET_NULL,
+    #    null=True,
+     #   blank=True,
+      #  verbose_name='Пользователь'
+    #)
 
-    def __str__(self):
-        return self.text[:20]
+    #recipe = models.ForeignKey(
+     #   to=Recipe,
+      #  on_delete=models.CASCADE,
+       # verbose_name='Рецепт'
+    #)
 
-    class Meta:
-        verbose_name = 'Комментарий'
-        verbose_name_plural = 'Комментарии'
+    #text = models.TextField(
+     #   verbose_name='Комментарий'
+    #)
+
+    #def __str__(self):
+     #   return self.text[:20]
+
+    #class Meta:
+     #   verbose_name = 'Комментарий'
+      #  verbose_name_plural = 'Комментарии'
 

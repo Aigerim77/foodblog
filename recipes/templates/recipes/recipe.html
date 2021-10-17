@@ -12,102 +12,14 @@
             <h2 align='center'><img src="{{ recipe_object.img.url }}" width="50%"></h2> 
             <br><hr><br>
             <div>{{ recipe_object.description }}</div>
-            <hr>
-            <div>Просмотров: {{ recipe_object.views_count }}</div>
             <br>
             {% if user.is_authenticated %}
-                  
+            <hr>
             <a class="btn btn-lg btn-primary" href="{% url 'edit-recipe' recipe_object.id %}">Изменить</a>
             <a class="btn btn-lg btn-info" href="{% url 'delete-recipe' recipe_object.id %}">Удалить</a>
             {% endif %}
             <br>
-            <br>
-            <hr>
-            <div id="disqus_thread"></div>
-            <script>
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-                /*
-                var disqus_config = function () {
-                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                */
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://cookbook312.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                        
         </div>
-        <aside class="col-md-4"><main class="container">
-            <div class="p-4 mb-3 bg-light rounded">
-                <div class="p-4">
-                    <h4 class="font-italic">КАТЕГОРИИ</h4>
-                    <ol class="list-unstyled mb-0">
-                        <li><h5><a href="">Вторые блюда</a></h5></li>
-                        <li><a href="">>Блюда из субпродуктов</a>
-                        <li><a href="">>Запенки</a></li>
-                        <li><a href="">>Каши</a></li>
-                        <li><a href="">>Мясо</a></li>
-                        <li><a href="">>Овощи и грибы</a></li>
-                        <li><a href="">>Паста, блюда из макарон</a></li>
-                        <li><a href="">>Пельмени, вареники, манты</a></li>
-                        <li><a href="">>Птица</a></li>
-                        <li><a href="">>Рыба и морепродукты</a></li>
-                        <li><a href="">>Суши и роллы</a></li>
-                        <li><h5><a href="">Выпечка, блюда из теста</a></h5></li>
-                        <li><a href="">>Блины</a></li>
-                        <li><a href="">>Булочки, пышки, хлеб</a></li>      
-                        <li><a href="">>Кексы и маффины</a></li>
-                        <li><a href="">>Пироги</a></li>
-                        <li><a href="">>Пирожки</a></li>
-                        <li><a href="">>Пицца</a></li>
-                        <li><a href="">>Тесто</a></li>
-                        <li><a href="">>Чебуреки, беляши, сочни</a></li>
-                        <li><a href="">>Шарлотки</a></li>
-                        <li><h5><a href="">Десерты</a></h5></li>
-                        <li><a href="">>Конфеты</a></li>
-                        <li><a href="">>Печенье</a></li>
-                        <li><a href="">>Торты</a></li>
-                        <li><a href="">>Фруктовые десерты</a>
-                        <li><h5><a href="">Закуски</a></h5>
-                        <li><a href="">>Бутерброды</a></li>
-                        <li><a href="">>Закуски из мяса</a></li>
-                        <li><a href="">>Закуски из овощей и грибов</a></li>
-                        <li><a href="">>Закуски из рыбы и морепродуктов</a></li>
-                        <li><a href="">>Закуски из сыра</a></li>
-                        <li><a href="">>Закуски из яиц</a></li>
-                        <li><a href="">>Заливное</a></li>
-                        <li><a href="">>Паштеты</a></li>
-                        <li><a href="">>Рулеты</a></li>
-                        <li><h5><a href="">Консервирование</a></h5></li>
-                        <li><a href="">>Варенье</a></li>
-                        <li><a href="">>Консервированное мясо</a></li>
-                        <li><a href="">>Маринады</a></li>
-                        <li><a href="">>Овощные салаты</a></li>
-                        <li><a href="">>Соленья</a></li>
-                        <li><h5><a href="">Салаты</a></h5></li>
-                        <li><a href="">>Салаты из овощей, грибов, сыра</a></li>
-                        <li><a href="">>Салаты из рыбы и морепродуктов</a></li>
-                        <li><a href="">>Салаты с мясом</a></li>
-                        <li><h5><a href="">Соусы</a></h5></li>
-                        <li><a href="">>Майонезы</a></li>
-                        <li><a href="">>Соусы из муки</a></li>
-                        <li><h5><a href="">Супы</a></h5></li>
-                        <li><a href="">>Бульоны</a></li>
-                        <li><a href="">>Заправочные супы</a></li>
-                        <li><a href="">>Рыбные супы</a></li>
-                        <li><a href="">>Суп-пюре</a></li>
-                        <li><a href="">>Холодные супы</a></li>
-                    </ol>    
-                </div>    
-            </div>
-        </aside>
         </div><!-- /.row -->
     </main><!-- /.container -->
 

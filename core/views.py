@@ -54,10 +54,6 @@ def news(request):
     news_objects = News.objects.all()
     return render(request, 'core/news.html', {'news_objects': news_objects})
 
-#def post(request, id):
- #   post_object = News.objects.get(id=id)
-  #  return render(request, 'core/post.html', {'post_object': post_object})
-
 def advice(request):
     advice_object = Advice.objects.all()
     return render(request, 'core/advice.html', {'advice_object': advice_object})

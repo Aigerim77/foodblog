@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.views.generic import ListView, FormView, DetailView 
-from .models import Recipe, Feedback
+from .models import Recipe#, Feedback
 from core.models import Advice, News
-from .forms import RecipeForm, FeedbackForm
+from .forms import RecipeForm #, FeedbackForm
 from django.db.models import Q
 from itertools import chain
 
@@ -14,7 +14,7 @@ def recipes(request):
 
 def create_recipe(request):
     if request.method == "POST":
-        recipe_form = RecipeForm(request.POST)
+        recipe_form = RecipeForm(request.POST, request.FILES)
         if recipe_form.is_valid():
             recipe_form.save()
             return redirect(recipes)
@@ -48,18 +48,18 @@ def delete_recipe(request, id):
     recipe_object.delete()
     return redirect(recipes)
 
-class FeedbackView(FormView):
-    template_name = 'recipes/feedback_form.html'
-    form_class = FeedbackForm
-    success_url = '/recipes/'
+#class FeedbackView(FormView):
+ #   template_name = 'recipes/feedback_form.html'
+  #  form_class = FeedbackForm
+   # success_url = '/recipes/'
 
-    def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
+    #def form_valid(self, form):
+     #   form.save()
+      #  return super().form_valid(form)
 
-class FeedbackDetailView(DetailView):
-    queryset = Feedback.objects.all()
-    template_name = 'recipes/feedback.html'
+#class FeedbackDetailView(DetailView):
+ #   queryset = Feedback.objects.all()
+  #  template_name = 'recipes/feedback.html'
 
 
 
